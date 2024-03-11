@@ -32,16 +32,18 @@ public class CustomerController {
         return ResponseEntity.ok(RestResponse.of(customerDTO));
     }
 
-    @DeleteMapping
-    public void deleteCustomer(@PathVariable Long id) {
-        customerControllerContract.deleteCustomer(id);
-    }
     @PutMapping("/{debugCustomerId}")
     public ResponseEntity<RestResponse<CustomerDTO>> updateCustomer(@PathVariable Long debugCustomerId,@RequestBody CustomerUpdateRequest request){
         CustomerDTO customerDTO = customerControllerContract.updateCustomer(request);
 
         return ResponseEntity.ok(RestResponse.of(customerDTO));
     }
+
+    @DeleteMapping
+    public void deleteCustomer(@PathVariable Long id) {
+        customerControllerContract.deleteCustomer(id);
+    }
+
 
 
 }

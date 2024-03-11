@@ -11,5 +11,7 @@ public record CustomerDTO(Long id,
                           String identityNo,
                           String phoneNumber,
                           String email,
-                          EnumStatus status){
+                          EnumStatus status,
+                          double longitude,
+                          double latitude){
 }
