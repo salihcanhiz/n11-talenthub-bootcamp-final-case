@@ -6,6 +6,7 @@ import com.salihcanhiz.finalcase.controller.contract.CustomerControllerContract;
 import com.salihcanhiz.finalcase.dto.CustomerDTO;
 import com.salihcanhiz.finalcase.general.RestResponse;
 import com.salihcanhiz.finalcase.request.CustomerSaveRequest;
+import com.salihcanhiz.finalcase.request.CustomerUpdateRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +36,12 @@ public class CustomerController {
     public void deleteCustomer(@PathVariable Long id) {
         customerControllerContract.deleteCustomer(id);
     }
-    
+    @PutMapping("/{debugCustomerId}")
+    public ResponseEntity<RestResponse<CustomerDTO>> updateCustomer(@PathVariable Long debugCustomerId,@RequestBody CustomerUpdateRequest request){
+        CustomerDTO customerDTO = customerControllerContract.updateCustomer(request);
+
+        return ResponseEntity.ok(RestResponse.of(customerDTO));
+    }
+
 
 }

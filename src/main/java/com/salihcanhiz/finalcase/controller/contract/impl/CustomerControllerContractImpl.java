@@ -5,6 +5,7 @@ import com.salihcanhiz.finalcase.dto.CustomerDTO;
 import com.salihcanhiz.finalcase.entity.Customer;
 import com.salihcanhiz.finalcase.mapper.CustomerMapper;
 import com.salihcanhiz.finalcase.request.CustomerSaveRequest;
+import com.salihcanhiz.finalcase.request.CustomerUpdateRequest;
 import com.salihcanhiz.finalcase.service.entityservice.CustomerEntityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -33,6 +34,15 @@ public class CustomerControllerContractImpl implements CustomerControllerContrac
     @Override
     public void deleteCustomer(Long id) {
         customerEntityService.delete(id);
+    }
+
+    @Override
+    public CustomerDTO updateCustomer(CustomerUpdateRequest request) {
+        Customer customer = customerEntityService.findByIdWithControl(request.id());
+        CustomerMapper.INSTANCE.updateCustomerFields(customer, request);
+        customerEntityService.save(customer);
+
+        return CustomerMapper.INSTANCE.convertToCustomerDTO(customer);
     }
 
 
