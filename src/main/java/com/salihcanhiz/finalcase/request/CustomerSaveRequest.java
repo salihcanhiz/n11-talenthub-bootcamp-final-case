@@ -11,12 +11,10 @@ import java.time.LocalDate;
 public record CustomerSaveRequest(@NotBlank @Length(min = 1, max = 100) String name,
                                   @NotBlank String surname,
                                   @NotNull @Past LocalDate birthDate,
-                                  @NotNull String username,
-                                  @NotBlank String identityNo,
                                   @NotBlank String password,
                                   @NotBlank String phoneNumber,
                                   @NotBlank @Email String email,
-                                  @NotBlank double longitude,
-                                  @NotBlank double latitude) {
+                                  @NotNull double longitude,
+                                  @NotNull double latitude) {
 
 }

@@ -3,13 +3,15 @@ package com.salihcanhiz.finalcase.entity;
 import com.salihcanhiz.finalcase.enums.EnumStatus;
 import com.salihcanhiz.finalcase.general.BaseEntity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.antlr.v4.runtime.misc.NotNull;
+
 import org.hibernate.validator.constraints.Length;
 
 
@@ -41,13 +43,10 @@ public class Customer extends BaseEntity {
     @Column(name = "BIRTH_DATE")
     private LocalDate birthDate;
 
-    @Column(name = "IDENTITY_NO", length = 11)
-    private String identityNo;
-
-    @Column(name = "PHONE_NUMBER", length = 20)
+    @Column(name = "PHONE_NUMBER", length = 10)
     private String phoneNumber;
 
-    @NotBlank(message = "PASSWORD CANNOT BE BLANK!!!")
+    @NotBlank(message = "PASSWORD CANNOT BE BLANK!")
     @Column(name = "PASSWORD", length = 400, nullable = false)
     private String password;
 
@@ -55,6 +54,11 @@ public class Customer extends BaseEntity {
     @Enumerated(EnumType.STRING)
     @Column(name = "STATUS", length = 30, nullable = false)
     private EnumStatus status;
+
+    @Email
+    @NotBlank
+    @Column(name = "EMAIL", length = 100, nullable = false)
+    private String email;
 
     @Column(name = "LONGITUDE", length = 80)
     private double longitude;

@@ -16,6 +16,7 @@ import java.util.List;
 public interface CustomerMapper {
 
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
+    @Mapping(target = "status", constant = "ACTIVE")
     Customer convertToCustomer(CustomerSaveRequest request);
 
     CustomerDTO convertToCustomerDTO(Customer customer);

@@ -33,4 +33,5 @@ public class RestResponse<T> {
     public static <T> RestResponse<T> empty(){
         return new RestResponse<>(null, true);
     }
+
 }

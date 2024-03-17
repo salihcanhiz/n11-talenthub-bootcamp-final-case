@@ -13,7 +13,9 @@ public class CustomerEntityService extends BaseEntityService<Customer, CustomerR
 
     protected CustomerEntityService(CustomerRepository repository) {
         super(repository);
+
     }
+
 
 
 }
