@@ -3,26 +3,7 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-.DS_STORE
-*.swp
-*.o
-Makefile
-y.tab.*
-cfg.mk
-checknr/checknr
-col/col
-compat.h
-config.log
-eqn/checkeq.d/checkeq
-mpm/pm
-picpack/picpack
-ptx/ptx
-soelim/soelim
-tbl/tbl
-troff/nroff.d/nroff
-troff/troff.d/dhtml/dhtml
-troff/troff.d/dpost.d/dpost
-troff/troff.d/font/devhtml/makefont
+
 ### STS ###
 .apt_generated
 .classpath
