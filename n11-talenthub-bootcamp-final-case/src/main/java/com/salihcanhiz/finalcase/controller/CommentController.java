@@ -35,7 +35,7 @@ public class CommentController {
 
     @PutMapping("/{debugCommentId}")
     @Operation(summary = "Update Comment")
-    public ResponseEntity<RestResponse<CommentDTO>> updateCustomer(@Valid @PathVariable Long debugCommentId,@RequestBody CommentUpdateRequest request){
+    public ResponseEntity<RestResponse<CommentDTO>> updateComment(@Valid @PathVariable Long debugCommentId,@RequestBody CommentUpdateRequest request){
         CommentDTO commentDTO = commentControllerContract.updateComment(request);
 
         return ResponseEntity.ok(RestResponse.of(commentDTO));
