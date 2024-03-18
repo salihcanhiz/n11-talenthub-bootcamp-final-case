@@ -1,5 +1,5 @@
 
-# Project Title
+# Project Description
 
 This project is our n11 bootcamp graduation project. In our project, there is a structure where users are present, restaurants are present, and we can comment on these restaurants.
 
